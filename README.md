@@ -19,7 +19,7 @@ Every entry below follows the same structure a real SOC ticket would: alert rece
 
 ## 🧭 How to read this log
 
-Each incident gets its own entry using the template below. Entries are added as I complete them on LetsDefend — nothing is backfilled or embellished after the fact.
+Each incident gets its own entry using the template below. Entries are added as I complete them on LetsDefend; nothing is backfilled or embellished after the fact.
 
 ---
 
@@ -76,7 +76,7 @@ What this incident taught me — a detection gap, a new tool feature, a faster t
 
 ## 🧩 Skills Demonstrated Across This Log
 
-As entries accumulate, this section tracks the range of SOC competencies shown across the full log — useful for a recruiter scanning for specific skills.
+As entries accumulate, this section tracks the range of SOC competencies shown across the full log, useful for a recruiter scanning for specific skills.
 
 - [ ] Phishing email analysis (headers, links, attachments)
 - [ ] Log correlation across multiple sources
@@ -91,7 +91,7 @@ As entries accumulate, this section tracks the range of SOC competencies shown a
 
 ## 📌 Notes on Format
 
-- Each incident is written **after** completing it on LetsDefend, in my own words — not copy-pasted from the platform's answer key.
+- Each incident is written **after** completing it on LetsDefend, in my own words, not copy-pasted from the platform's answer key.
 - Sensitive lab data (if any) is sanitized before posting.
 - Screenshots are cropped to relevant panels only, to keep entries scannable rather than a wall of images.
 
