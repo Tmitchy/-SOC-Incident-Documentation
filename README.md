@@ -53,13 +53,13 @@ Step-by-step walkthrough of the analysis:
 Screenshots, log snippets, or IOC tables that support the findings.
 
 **5. Verdict**
-True Positive / False Positive / Benign True Positive — and the reasoning behind that call.
+True Positive / False Positive / Benign True Positive and the reasoning behind that call.
 
 **6. Response / Containment**
-What action was taken (or would be taken in a live environment) — isolate host, block IP, disable account, escalate to Tier 2, etc.
+What action was taken (or would be taken in a live environment): isolate host, block IP, disable account, escalate to Tier 2, etc.
 
 **7. Lessons Learned**
-What this incident taught me — a detection gap, a new tool feature, a faster triage path, or a concept I had to look up.
+What this incident taught me: a detection gap, a new tool feature, a faster triage path, or a concept I had to look up.
 ```
 
 ---
