@@ -70,7 +70,7 @@ What this incident taught me — a detection gap, a new tool feature, a faster t
 
 | # | Title | Alert Type | Verdict | Link |
 |---|---|---|---|---|
-| 001 | *(pending first write-up)* | — | — | — |
+| 001 | LetsDefend-Monitoring-Alert | **Malicious File/Script Download Attempt** | True Positive | https://github.com/Tmitchy/LetsDefend-Monitoring-Alert |
 
 ---
 
