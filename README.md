@@ -16,7 +16,7 @@ Each entry mirrors a real SOC ticket: alert received → investigation → evide
 
 ## 🎯 Why This Repository Exists
 
-Anyone can claim they completed alerts on LetsDefend, but a recruiter can't verify that or see my thought process. This log demonstrates my **process**, showcasing the triage logic, evidence gathering, and decision-making of a SOC Analyst. All information is recorded in my words rather than using the LetsDefend explanations.
+Anyone can claim they completed alerts on LetsDefend, but a recruiter can't verify that or see my thought process. This log demonstrates my **process**, showcasing the triage logic, evidence gathering, and decision-making of a SOC Analyst.
 
 ---
 
