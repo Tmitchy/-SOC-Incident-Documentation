@@ -8,12 +8,15 @@
 </p>
 
 ---
+## 🎯Overview
 
-## 🎯 Why I document incidents this way
+Each entry mirrors a real SOC ticket: alert received → investigation → evidence → decision → lessons learned. The goal is to create a portfolio for hiring managers to quickly see that I can *reason through* an incident, not just click through a platform.
 
-Anyone can say "I completed X alerts on LetsDefend." A recruiter can't verify that, and it doesn't show *how* I think. This log exists to prove **process**, not just completion- the same triage logic, evidence-gathering, and decision-making a working SOC Analyst uses, applied to each practice incident I work through.
+---
 
-Every entry below follows the same structure a real SOC ticket would: alert received → investigation → evidence → decision → lessons learned. The goal is a portfolio a hiring manager can skim and immediately see I can *reason through* an incident, not just click through a platform.
+## 🎯 Why This Repository Exists
+
+Anyone can claim they completed alerts on LetsDefend, but a recruiter can't verify that or see my thought process. This log demonstrates my **process**, showcasing the triage logic, evidence gathering, and decision-making of a SOC Analyst. All information is recorded in my words rather than using the LetsDefend explanations.
 
 ---
 
@@ -24,8 +27,6 @@ Each incident gets its own entry using the template below. Entries are added as 
 ---
 
 ## 📁 Incident Entry Template
-
-> Copy this block for each new incident.
 
 ```markdown
 ### Incident #[number] — [Short Descriptive Title]
