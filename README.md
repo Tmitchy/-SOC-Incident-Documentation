@@ -1,4 +1,4 @@
-<h1 align="center">🚨 SOC Incident Investigation Log</h1>
+<h1 align="center">🚨 Incident Documentation</h1>
 <h3 align="center">Real-world triage practice, documented like an analyst — not a student</h3>
 
 <p align="center">
