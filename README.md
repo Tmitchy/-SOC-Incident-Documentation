@@ -11,7 +11,7 @@
 
 ## 🎯 Why I document incidents this way
 
-Anyone can say "I completed X alerts on LetsDefend." A recruiter can't verify that, and it doesn't show *how* I think. This log exists to prove **process**, not just completion — the same triage logic, evidence-gathering, and decision-making a working SOC Analyst uses, applied to each practice incident I work through.
+Anyone can say "I completed X alerts on LetsDefend." A recruiter can't verify that, and it doesn't show *how* I think. This log exists to prove **process**, not just completion- the same triage logic, evidence-gathering, and decision-making a working SOC Analyst uses, applied to each practice incident I work through.
 
 Every entry below follows the same structure a real SOC ticket would: alert received → investigation → evidence → decision → lessons learned. The goal is a portfolio a hiring manager can skim and immediately see I can *reason through* an incident, not just click through a platform.
 
