@@ -1,5 +1,5 @@
 <h1 align="center">🚨 Incident Documentation</h1>
-<h3 align="center">Real-world triage practice, documented like an analyst — not a student</h3>
+<h3 align="center">Real-world triage practice, documented like an analyst - not a student</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-LetsDefend-1E1E1E?style=for-the-badge"/>
