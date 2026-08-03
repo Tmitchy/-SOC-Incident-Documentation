@@ -37,10 +37,11 @@ Every write-up is in my own words, based on what I actually found - not copied f
 
 | Metric | Count |
 |---|---|
-| Total investigations | 1 |
+| Total investigations | 2 |
 | Phishing alerts | 0 |
 | Malware alerts | 1 |
 | Brute force / credential attacks | 0 |
+| Infrastructure / PKI incidents | 1 |
 | True Positives | 1 |
 | False Positives | 0 |
 | Benign True Positives | 0 |
@@ -52,6 +53,7 @@ Every write-up is in my own words, based on what I actually found - not copied f
 | ID | Investigation | Category | Severity | Verdict | Report |
 |---|---|---|---|---|---|
 | 001 | Malicious-File-Script-Download-Attempt | Malware | Medium | True Positive | [View](investigations/Malicious-File-Script-Download-Attempt.md) |
+| 002 | Kibana–Elasticsearch TLS Trust Failure After IP Re-Addressing | Infrastructure / PKI | Medium | True Positive | [View](./investigations/002-kibana-elasticsearch-tls-trust-failure.md) |
 
 ---
 
@@ -67,6 +69,9 @@ As investigations accumulate, this tracks the range of SOC competencies shown-us
 - [ ] Insider threat / anomalous user behavior
 - [x] Incident severity classification
 - [ ] Escalation decision-making
+- [x] PKI / TLS certificate troubleshooting
+- [x] Systematic root-cause analysis under compounding failures
+- [x] Service/log diagnostics (systemd, journalctl)
 
 ---
 
