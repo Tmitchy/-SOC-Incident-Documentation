@@ -80,4 +80,4 @@ As investigations accumulate, this tracks the range of SOC competencies shown-us
 
 ---
 
-<p align="center"><i>Companion repository to the SOC Home Lab Build — this repo covers hands-on incident response practice, while the lab doc covers the infrastructure being built to eventually run these investigations independently.</i></p>
+<p align="center"><i>Companion repository to the SOC Home Lab Build - this repo covers hands-on incident response practice, while the lab doc covers the infrastructure being built to eventually run these investigations independently.</i></p>
