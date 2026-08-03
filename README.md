@@ -19,7 +19,7 @@ Anyone can say "I completed X alerts on LetsDefend." A recruiter can't verify th
 
 Every write-up is in my own words, based on what I actually found — not copied from a platform's answer key.
 
-> **Note:** while most investigations here come from LetsDefend, some are real incidents from building my own SOC home lab — like PKI/certificate failures I had to root-cause myself. These aren't simulated; they're genuine troubleshooting under time pressure.
+> **Note:** While most investigations here come from LetsDefend, some are real incidents from building my own SOC home lab — like PKI/certificate failures I had to root-cause myself. These aren't simulated; they're genuine troubleshooting under time pressure.
 
 ---
 
