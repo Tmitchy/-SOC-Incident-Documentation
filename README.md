@@ -52,7 +52,7 @@ Every write-up is in my own words, based on what I actually found — not copied
 
 | ID | Investigation | Category | Severity | Verdict | Report |
 |---|---|---|---|---|---|
-| 001 | Kibana–Elasticsearch TLS Trust Failure After IP Re-Addressing | Infrastructure / PKI | Medium | True Positive | [View](./investigations/001-kibana-elasticsearch-tls-trust-failure.md) |
+| 001 | Malicious-File-Script-Download-Attempt | Malware | Medium | True Positive | [View]() |
 
 ---
 
