@@ -52,7 +52,7 @@ Every write-up is in my own words, based on what I actually found — not copied
 
 | ID | Investigation | Category | Severity | Verdict | Report |
 |---|---|---|---|---|---|
-| 001 | Malicious-File-Script-Download-Attempt | Malware | Medium | True Positive | [View]() |
+| 001 | Malicious-File-Script-Download-Attempt | Malware | Medium | True Positive | [View](investigations/Malicious-File-Script-Download-Attempt.md) |
 
 ---
 
