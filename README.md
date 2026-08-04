@@ -27,7 +27,7 @@ Every write-up is in my own words, based on what I actually found - not copied f
 
 - **This README is the master index** - a live summary of everything in the repo.
 - Each investigation lives in its **own file** under [`/investigations`](./investigations), named `[ID]-[short-title].md`.
-- The reusable write-up structure lives in [`/templates/investigation-template.md`](./templates/investigation-template.md) — copy that file to start a new entry.
+- The reusable write-up structure lives in [`/templates/investigation-template.md`](./templates/investigation-template.md) - copy that file to start a new entry.
 
 ---
 
