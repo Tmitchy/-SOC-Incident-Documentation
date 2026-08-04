@@ -23,9 +23,9 @@ First actions taken. What did I check first, and why that, before anything else?
 
 | Time | Action | Result |
 |---|---|---|
-| 03:35 | Reviewed Endpoint Security for the alerted IP | Destination IP 172.16.20.12 resolved to hostname Atlanta-Server in Endpoint Security — this did not match the hostname shown by the monitoring tool that generated the alert, indicating a possible discrepancy in asset/hostname mapping |
+| 03:35 | Reviewed Endpoint Security for the alerted IP | Destination IP `172.16.20.12` resolved to hostname `Atlanta-Server` in Endpoint Security - this did not match the hostname shown by the monitoring tool that generated the alert, indicating a possible discrepancy in asset/hostname mapping |
 | 03:43 | Reviewed browser history on the source endpoint | No matching request found - traffic wasn't user-initiated via browser |
-| 03:46 | Reviewed log management/proxy logs | Found additional suspicious GET requests from 118.194.247.28 to 172.16.20.12, routed via proxy |
+| 03:46 | Reviewed log management/proxy logs | Found additional suspicious GET requests from `118.194.247.28` to `172.16.20.12`, routed via proxy |
 | 03:50 | Reviewed endpoint process activity | No suspicious Activity found. |
 | 03:53 | Reviewed endpoint network connections | No suspicious Activity found. |
 | 03:55 | Reviewed endpoint terminal history | No suspicious Activity found. |
