@@ -17,7 +17,7 @@ What triggered the alert? What did the SOC monitoring tool flag, and why did it 
 
 **2. Initial Triage**
 First actions taken. What did I check first, and why that, before anything else?
-- Initially, I checked which `IP adress/host` made the `GET` request. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, which included details such as its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
+- Initially, I checked which `IP address/host` made the `GET` request. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, which included details such as its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
 
 **3. Investigation Timeline**
 
