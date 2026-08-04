@@ -1,9 +1,9 @@
 ### [003] — [SOC127 - SQL Injection Detected]
 
-**Date worked:** 2026-08-04
-**Source:** LetsDefend SOC Simulation / Home SOC Lab
-**Category:** Web Attack
-**Severity assigned:** High
+**Date worked:** 2026-08-04<br>
+**Source:** LetsDefend SOC Simulation / Home SOC Lab<br>
+**Category:** Web Attack<br>
+**Severity assigned:** High<br>
 
 ---
 
