@@ -1,4 +1,4 @@
-### [003] — [SOC127 - SQL Injection Detected]
+### [003] - [SOC127 - SQL Injection Detected]
 
 **Date worked:** 2026-08-04<br>
 **Source:** LetsDefend SOC Simulation / Home SOC Lab<br>
