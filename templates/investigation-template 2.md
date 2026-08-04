@@ -17,6 +17,7 @@ What triggered the alert? What did the SOC monitoring tool flag, and why did it 
 
 **2. Initial Triage**
 First actions taken. What did I check first, and why that, before anything else?
+- First, I identified the endpoint, quarantined it, and gathered its information from the endpoint security section. I quarantined the device from the network to protect the network from further attack.
 
 **3. Investigation Timeline**
 
