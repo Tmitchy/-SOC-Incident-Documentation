@@ -10,8 +10,8 @@
 **1. Alert Summary**
 What triggered the alert? What did the SOC monitoring tool flag, and why did it warrant a look?
 - The alert was triggered by a specific rule: SOC127 - SQL Injection Detected
-- SOC monitoring tool flag: Request URL: `GET /?douj=3034%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1--%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23 HTTP/1.1 200 865`
-- It warrants a look at: Destination IP Address: `172.16.20.121`, Hostname: `Atlanta-Server`
+- SOC monitoring tool flagged: A `GET` Request
+- It warrants a look at: Destination IP Address: `172.16.20.12`, Hostname: `WebServer1000`
 
 
 
@@ -23,11 +23,14 @@ First actions taken. What did I check first, and why that, before anything else?
 
 | Time | Action | Result |
 |---|---|---|
-| 03:43 | Investigated the Browser History | No such request was found |
-| 03:46 | Investigated the Log Management | Found more suspicious `GET` requests from the source IP address: `118.194.247.28`, targeting the destination IP address: |
-| |                                        | "GET /index.php?id=1%27%29%20AND%202574%3DCAST%28%28CHR%28113%29%7C%7CCHR%28107%29%7C%7CCHR%28107%29%7C%7CCHR%28118%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%282574%3D2574%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%28%27FiHf%27%3D%27FiHf HTTP/1.1" 200 865 "-" "sqlmap/1.7.2#stable (https://sqlmap.org)" |
-| | | "GET /index.php?id=1%27%20AND%202574%3DCAST%28%28CHR%28113%29%7C%7CCHR%28107%29%7C%7CCHR%28107%29%7C%7CCHR%28118%29%7C%7CCHR%28113%29%29%7C%7C%28SELECT%20%28CASE%20WHEN%20%282574%3D2574%29%20THEN%201%20ELSE%200%20END%29%29%3A%3Atext%7C%7C%28CHR%28113%29%7C%7CCHR%28112%29%7C%7CCHR%28122%29%7C%7CCHR%28106%29%7C%7CCHR%28113%29%29%20AS%20NUMERIC%29%20AND%20%27qQpG%27%3D%27qQpG HTTP/1.1" 200 865 "-" "sqlmap/1.7.2#stable (https://sqlmap.org)" |
-| 03:50 | Investigated the Log Management
+| 03:35 | Investigated the Endpoint Security | I found the **destination IP address:** `172.16.20.12` but it linked to a different **Hostname:** `Atlanta-Server` |
+| 03:43 | Investigated the Browser History | No such request that trigger the alert was found |
+| 03:46 | Investigated the Log Management | Detected additional suspicious `GET` requests from IP address `118.194.247.28`, targeting destination IP address `172.16.20.12` via proxy. |
+| 03:50 | Investigated the Endpoint process ID | No suspicious Activty found |
+| 03:50 | Investigated the Endpoint Network Action | No suspicious Activty found |
+| 03:50 | Investigated the Endpoint Terminal History | No suspicious Activty found |
+
+
 
 
 **4. Investigation**
