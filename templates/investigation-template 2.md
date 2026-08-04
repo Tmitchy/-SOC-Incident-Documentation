@@ -23,19 +23,19 @@ First actions taken. What did I check first, and why that, before anything else?
 
 | Time | Action | Result |
 |---|---|---|
-| 03:35 | Investigated the Endpoint Security | I found the **destination IP address:** `172.16.20.12` but it linked to a different **Hostname:** `Atlanta-Server`. |
-| 03:43 | Investigated the Browser History | No such request that triggered the alert was found. |
-| 03:46 | Investigated the Log Management | Detected additional suspicious `GET` requests from IP address `118.194.247.28`, targeting destination IP address `172.16.20.12` via proxy. |
-| 03:50 | Investigated the Endpoint process ID | No suspicious Activty found. |
-| 03:53 | Investigated the Endpoint Network Action | No suspicious Activty found. |
-| 03:55 | Investigated the Endpoint Terminal History | No suspicious Activty found. |
+| 03:35 | Reviewed Endpoint Security for the alerted IP | Destination IP 172.16.20.12 resolved to hostname Atlanta-Server in Endpoint Security — this did not match the hostname shown by the monitoring tool that generated the alert, indicating a possible discrepancy in asset/hostname mapping |
+| 03:43 | Reviewed browser history on the source endpoint | No matching request found - traffic wasn't user-initiated via browser |
+| 03:46 | Reviewed log management/proxy logs | Found additional suspicious GET requests from 118.194.247.28 to 172.16.20.12, routed via proxy |
+| 03:50 | Reviewed endpoint process activity | No suspicious Activity found. |
+| 03:53 | Reviewed endpoint network connections | No suspicious Activity found. |
+| 03:55 | Reviewed endpoint terminal history | No suspicious Activity found. |
 
 
 
 
 **4. Investigation**
 Step-by-step walkthrough of the analysis:
-- Logs/tools reviewed (e.g. firewall logs, endpoint detection, email headers)
+- Logs/tools reviewed 
 - Indicators found
 - Any pivoting done (e.g. checking a suspicious IP across other log sources)
 
