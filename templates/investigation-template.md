@@ -1,4 +1,4 @@
-### [Investigation ID] — [Short Descriptive Title]
+### [Investigation ID] - [Short Descriptive Title]
 
 **Date worked:** YYYY-MM-DD
 **Source:** LetsDefend SOC Simulation / Home SOC Lab
@@ -45,10 +45,10 @@ Step-by-step walkthrough of the analysis:
 Screenshots, log snippets, or IOC tables that support the findings.
 
 **8. Verdict**
-True Positive / False Positive / Benign True Positive — and the reasoning behind that call.
+True Positive / False Positive / Benign True Positive and the reasoning behind that call.
 
 **9. Response / Containment**
-What action was taken (or would be taken in a live environment) — isolate host, block IP, disable account, escalate to Tier 2, etc.
+What action was taken (or would be taken in a live environment): isolate host, block IP, disable account, escalate to Tier 2, etc.
 
 **10. Lessons Learned**
-What this incident taught me — a detection gap, a new tool feature, a faster triage path, or a concept I had to look up.
+What this incident taught me: a detection gap, a new tool feature, a faster triage path, or a concept I had to look up.
