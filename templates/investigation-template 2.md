@@ -10,8 +10,8 @@
 **1. Alert Summary**
 What triggered the alert? What did the SOC monitoring tool flag, and why did it warrant a look?
 - The alert was triggered by a specific rule name: SOC287 - Arbitrary File Read on Check Point Security Gateway
-- SOC monitoring tool flagged: A `POST` Request
-- It warrants a look at: Destination IP Address: `172.16.20.146`, Hostname: `CP-Spark-Gateway-01`
+- The SIEM monitoring tool flagged: A `POST` request to an IP address that was attempting to access `aCSHELL/../../../../../../../../../../etc/passwd`
+- The SIEM warrants a look at: Destination IP Address: `172.16.20.146`, Hostname: `CP-Spark-Gateway-01`, Port: `53423`
 
 
 
@@ -34,7 +34,11 @@ First actions taken. What did I check first, and why that, before anything else?
 
 **4. Investigation**
 Step-by-step walkthrough of the analysis:
-- Logs/tools reviewed 
+- Logs/tools reviewed:
+   - Log Management Tool: To confirm the connection pattern and frequency.
+   - Endpoint Security (EDR): To check what process on the host initiated the connection.
+   - DNS logs: To see if the destination IP was reached via a domain lookup or a hardcoded IP.
+   - VirusTotal: Checked the reputation of the destination IP and any associated domain.
 - Indicators found
 - Any pivoting done (e.g. checking a suspicious IP across other log sources)
 
