@@ -69,21 +69,20 @@ Step-by-step walkthrough of the analysis:
 **7. Evidence**
 Screenshots, log snippets, or IOC tables that support the findings.
 
+  - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/SIEM%20Review.png)
 
-![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/SIEM%20Review.png)
+  - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Log%20Management%20Review%20.png)
 
-![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Log%20Management%20Review%20.png)
+  - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/EDR%20Review.png)
 
-![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/EDR%20Review.png)
-
-![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Virustotal-1%20Review.png)
+  - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Virustotal-1%20Review.png)
 
 
 **8. Verdict**
 True Positive: 
   - The web attack was successful. After analyzing the tools used to review logs and gather information, it was found that the firewall allowed the POST request, resulting in the attacker gaining access to private information.
 
-![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Verdict%20Review.png)
+  - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Verdict%20Review.png)
 
 **9. Response / Containment**
 What action was taken (or would be taken in a live environment):
