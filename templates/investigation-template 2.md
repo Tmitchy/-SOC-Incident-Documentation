@@ -70,8 +70,11 @@ Screenshots, log snippets, or IOC tables that support the findings.
 
 
 ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/SIEM%20Review.png)
+
 ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Log%20Management%20Review%20.png)
+
 ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/EDR%20Review.png)
+
 ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Virustotal-1%20Review.png)
 
 
