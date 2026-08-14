@@ -1,4 +1,4 @@
-### [003] - [SOC127 - SQL Injection Detected]
+### [003] - [SOC287 - Arbitrary File Read on Checkpoint Security Gateway]
 
 **Date worked:** 2026-08-04<br>
 **Source:** LetsDefend SOC Simulation / Home SOC Lab<br>
@@ -9,15 +9,15 @@
 
 **1. Alert Summary**
 What triggered the alert? What did the SOC monitoring tool flag, and why did it warrant a look?
-- The alert was triggered by a specific rule name: SOC127 - SQL Injection Detected
-- SOC monitoring tool flagged: A `GET` Request
-- It warrants a look at: Destination IP Address: `172.16.20.12`, Hostname: `WebServer1000`
+- The alert was triggered by a specific rule name: SOC287 - Arbitrary File Read on Check Point Security Gateway
+- SOC monitoring tool flagged: A `POST` Request
+- It warrants a look at: Destination IP Address: `172.16.20.146`, Hostname: `CP-Spark-Gateway-01`
 
 
 
 **2. Initial Triage**
 First actions taken. What did I check first, and why that, before anything else?
-- Initially, I checked which `IP address/host` made the `GET` request. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, which included details such as its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
+- Initially, I checked which `IP address/host` made the `POST` request. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, which included details such as its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
 
 **3. Investigation Timeline**
 
