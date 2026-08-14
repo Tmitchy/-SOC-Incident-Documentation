@@ -23,10 +23,10 @@ First actions taken. What did I check first, and why that, before anything else?
 
 | Time | Action | Result |
 |---|---|---|
-| 03:43 | Reviewed browser history on the source endpoint | No matching request found - traffic wasn't user-initiated via browser |
-| 03:46 | Reviewed log management/proxy logs | Found additional suspicious GET requests from `118.194.247.28` to `172.16.20.12`, routed via proxy |
+| 03:43 | Reviewed browser history on the destination endpoint | No matching request found on the browser history |
+| 03:46 | Reviewed log management logs | Found additional suspicious POST requests from `203.160.68.12` to `172.16.20.146`, routed via proxy |
 | 03:50 | Reviewed endpoint process activity | No suspicious Activity found. |
-| 03:53 | Reviewed endpoint network connections | No suspicious Activity found. |
+| 03:53 | Reviewed endpoint network connections | Found and confirmed the Source IP address that made the request. |
 | 03:55 | Reviewed endpoint terminal history | No suspicious Activity found. |
 
 
