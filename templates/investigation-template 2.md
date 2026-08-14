@@ -4,6 +4,7 @@
 **Source:** LetsDefend SOC Simulation / Home SOC Lab<br>
 **Category:** Web Attack<br>
 **Severity assigned:** High<br>
+**CVE:** [CVE-2024-24919]<br>
 
 ---
 
