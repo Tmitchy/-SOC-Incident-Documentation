@@ -80,14 +80,19 @@ Screenshots, log snippets, or IOC tables that support the findings.
 
 
 **8. Verdict**
-True Positive: The web attack was successful. After analyzing the tools used to review logs and gather information, it was found that the firewall allowed the POST request, resulting in the attacker gaining access to private information.
+True Positive: 
+  - The web attack was successful. After analyzing the tools used to review logs and gather information, it was found that the firewall allowed the POST request, resulting in the attacker gaining access to private information.
+
+![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Verdict%20Review.png)
 
 **9. Response / Containment**
 What action was taken (or would be taken in a live environment):
   - Isolated the host
   - Blocked the IP
   - Disabled the account
-  - Escalate to Tier 2.
+  - Escalate to Tier 2
 
 **10. Lessons Learned**
-What this incident taught me — a detection gap, a new tool feature, a faster triage path, or a concept I had to look up.
+What this incident taught me: 
+  - A concept I had to look up
+  - Getting familiar with and understanding the Tatics, and techniques used by the adversary.
