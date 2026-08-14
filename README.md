@@ -37,12 +37,13 @@ Every write-up is in my own words, based on what I actually found - not copied f
 
 | Metric | Count |
 |---|---|
-| Total investigations | 2 |
+| Total investigations | 3 |
 | Phishing alerts | 0 |
 | Malware alerts | 1 |
 | Brute force / credential attacks | 0 |
+| Web Attack | 1 |
 | Infrastructure / PKI incidents | 1 |
-| True Positives | 1 |
+| True Positives | 2 |
 | False Positives | 0 |
 | Benign True Positives | 0 |
 
@@ -54,6 +55,7 @@ Every write-up is in my own words, based on what I actually found - not copied f
 |---|---|---|---|---|---|
 | 001 | Malicious-File-Script-Download-Attempt | Malware | Medium | True Positive | [View](investigations/Malicious-File-Script-Download-Attempt.md) |
 | 002 | Kibana–Elasticsearch TLS Trust Failure After IP Re-Addressing | Infrastructure / PKI | Medium | True Positive | [View](./investigations/002-kibana-elasticsearch-tls-trust-failure.md) |
+| 003 | Arbitrary File Read on Checkpoint Security Gateway | web Attack | High | True Positive | [View](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/investigations/%5B003%5D%20-%20%5BSOC287%20-%20Arbitrary%20File%20Read%20on%20Checkpoint%20Security%20Gateway%5D.md) |
 
 ---
 
@@ -63,13 +65,14 @@ As investigations accumulate, this tracks the range of SOC competencies shown-us
 
 - [ ] Phishing email analysis (headers, links, attachments)
 - [ ] Log correlation across multiple sources
-- [ ] IOC identification & lookup (VirusTotal, AbuseIPDB, etc.)
+- [x] IOC identification & lookup (VirusTotal, AbuseIPDB, etc.)
 - [x] Malware behavior analysis
 - [ ] Brute force / credential attack detection
 - [ ] Insider threat / anomalous user behavior
 - [x] Incident severity classification
-- [ ] Escalation decision-making
+- [x] Escalation decision-making
 - [x] PKI / TLS certificate troubleshooting
+- [x] Web Attack
 - [x] Systematic root-cause analysis under compounding failures
 - [x] Service/log diagnostics (systemd, journalctl)
 
