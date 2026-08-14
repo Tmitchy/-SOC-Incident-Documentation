@@ -80,7 +80,7 @@ Screenshots, log snippets, or IOC tables that support the findings.
 
 **8. Verdict**
 True Positive: 
-  - The web attack was successful. After analyzing the tools used to review logs and gather information, it was found that the firewall allowed the POST request, resulting in the attacker gaining access to private information.
+  - A recent web attack was successful, revealing critical vulnerabilities in the security infrastructure. Upon analyzing the tools used for log review and information gathering, it was determined that the firewall permitted a POST request. This oversight enabled the attacker to access private information and facilitated lateral movement within the network.
 
   - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Verdict%20Review.png)
 
