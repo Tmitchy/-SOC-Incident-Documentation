@@ -54,15 +54,16 @@ Step-by-step walkthrough of the analysis:
 |---|---|---|
 | IP | 203.160.68.12 | The IP address making the POST request for directory traversal. |
 | Port | 24124 | The port used by the source IP to initiate the connection. |
-
+| URL | /clients/MyCRL | The web remote path the adversary used to request a directory. |
 
 
 
 | Tactic | Technique | ID |
 |---|---|---|
-| — | — | — |
+| Initial Access | Exploit Public-Facing Application | T1190 |
+| Credential Access | OS Credential Dumping | T1003 |
+| Discovery | File and Directory Discovery | T1083 |
 
-*If the incident isn't adversarial (e.g. a self-inflicted config error), note that plainly instead of forcing a mapping.*
 
 **7. Evidence**
 Screenshots, log snippets, or IOC tables that support the findings.
