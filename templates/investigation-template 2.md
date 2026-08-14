@@ -39,18 +39,24 @@ Step-by-step walkthrough of the analysis:
    - Endpoint Security (EDR): To check what process on the host initiated the connection.
    - DNS logs: To see if the destination IP was reached via a domain lookup or a hardcoded IP.
    - VirusTotal: Checked the reputation of the destination IP and any associated domain.
-- Indicators found
-- Any pivoting done (e.g. checking a suspicious IP across other log sources)
+- Indicators found:
+   - The source IP `203.160.68.12`, port `24124`, sent a POST request to the firewall(Check Point Security Gateway) requesting the `/clients/MyCRL` remote path to access the directory where the users are stored by modifing and sending another POST request that contain the directory traversal payload `aCSHELL/../../../../../../../../../../etc/passwd`.
+   - EDR failed to indicate that the connection originated from the firewall shell; instead, it provided details about the network connection, showing the destination IP address and the active processes, including their IDs.
+   - No matching DNS query preceded the connections — the IP was hardcoded, not resolved via a domain.
+   - VirusTotal flagged the IP as malicious (7/94 vendors), associated with China Unicom Global.
+
+- Any pivoting done:
+  - All sections were clovered.
 
 **5. IOCs (Indicators of Compromise)**
 
 | Type | Value | Notes |
 |---|---|---|
-| IP / Hash / Domain / Username | — | — |
+| IP | 203.160.68.12 | The IP address making the POST request for directory traversal. |
+| Port | 24124 | The port used by the source IP to initiate the connection. |
 
-*If no traditional IOCs apply (e.g. infrastructure incidents), state that explicitly rather than leaving this blank.*
 
-**6. MITRE ATT&CK Mapping**
+
 
 | Tactic | Technique | ID |
 |---|---|---|
