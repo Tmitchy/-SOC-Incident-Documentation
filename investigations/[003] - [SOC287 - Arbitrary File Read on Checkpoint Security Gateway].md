@@ -94,6 +94,6 @@ What action was taken (or would be taken in a live environment):
 
 **10. Lessons Learned**
 What this incident taught me: 
-  - What aCSHELL is
+  - What **aCSHELL** is: a string used by attackers to trick the Check Point web server's routing logic.
   - Through further research, I gained a better understanding of how this vulnerability was exploited, particularly by recognizing how web attacks work by modifying parameters, such as the directory traversal payload.
   - How CVE-2024-24919 specifically bypasses authentication.
