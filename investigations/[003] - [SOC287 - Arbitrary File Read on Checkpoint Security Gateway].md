@@ -41,7 +41,7 @@ Step-by-step walkthrough of the analysis:
    - DNS logs: To see if the destination IP was reached via a domain lookup or a hardcoded IP.
    - VirusTotal: Checked the reputation of the source IP and any associated domain.
 - Indicators found:
-   - The source IP `203.160.68.12`, port `24124`, sent a POST request to the firewall(Check Point Security Gateway) requesting the `/clients/MyCRL` remote path to access the directory where the users are stored by modifing and sending another POST request that contain the directory traversal payload `aCSHELL/../../../../../../../../../../etc/passwd`.
+   - The source IP `203.160.68.12`, port `24124`, sent a POST request to the firewall(Check Point Security Gateway) requesting the `/clients/MyCRL` remote path to access the directory where the users are stored by modifying and sending another POST request that contain the directory traversal payload `aCSHELL/../../../../../../../../../../etc/passwd`.
    - EDR failed to indicate that the connection originated from the firewall shell; instead, it provided details about the network connection, showing the destination IP address and the active processes, including their IDs.
    - No matching DNS query preceded the connections — the IP was hardcoded, not resolved via a domain.
    - VirusTotal flagged the IP as malicious (7/94 vendors), associated with China Unicom Global.
@@ -84,13 +84,16 @@ Screenshots, log snippets, or IOC tables that support the findings.
 
 **8. Verdict**
 True Positive: 
-  - A recent web attack was successful, revealing critical vulnerabilities in the security infrastructure. Upon analyzing the tools used for log review and information gathering, it was determined that the firewall permitted a POST request. This oversight enabled the attacker to access private information and facilitated lateral movement within the network.
+  - A recent web attack was successful, revealing critical vulnerabilities in the security infrastructure. Upon analyzing the tools used for log review and information gathering, it was determined that the firewall permitted a POST request. This oversight enabled the attacker to access private information within the network device.
 
   - ![](https://raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/Verdict%20Review.png)
 
 **9. Response / Containment**
+
 What action was taken (or would be taken in a live environment):
-  - Escalate to Tier 2
+- Confirmed host isolation (`CP-Spark-Gateway-01`) as the correct containment step, given the confirmed unauthorized file access and Check Point CVE match.
+- Escalated to Tier 2 for further investigation into the extent of the file read and any downstream impact.
+
 
 **10. Lessons Learned**
 What this incident taught me: 
