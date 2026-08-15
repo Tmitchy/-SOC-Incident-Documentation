@@ -47,8 +47,8 @@ Step-by-step walkthrough of the analysis:
    - VirusTotal flagged the IP as malicious (7/94 vendors), associated with China Unicom Global.
 
 - Any pivoting done:
-  - All sections were clovered.
-
+  - Searched log management for 203.160.68.12 across all other internal hosts; no additional targets found, indicating this was a single-target attempt.
+    
 **5. IOCs (Indicators of Compromise)**
 
 | Type | Value | Notes |
