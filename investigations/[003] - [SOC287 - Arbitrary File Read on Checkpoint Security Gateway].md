@@ -50,7 +50,7 @@ Step-by-step walkthrough of the analysis:
   - I searched log management for 203.160.68.12 across all other internal hosts; no additional targets found, indicating this was a single-target attempt.
   - I checked whether the **/clients/MyCRL** path or **/etc/passwd** traversal attempt showed up against any other Check Point gateway or endpoint in the environment, but found nothing.
   - I found out the source IP address belongs to China Unicom (Hong Kong) Operations Limited and originates from Hong Kong.
-  - I found the Source IP is registered to a Network Named UNICOM-HK
+  - I found the Source IP is registered to a Network Named **UNICOM-HK**
     
 **5. IOCs (Indicators of Compromise)**
 
