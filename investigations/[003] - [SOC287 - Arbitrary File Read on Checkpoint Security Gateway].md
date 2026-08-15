@@ -86,9 +86,6 @@ True Positive:
 
 **9. Response / Containment**
 What action was taken (or would be taken in a live environment):
-  - Isolated the host
-  - Blocked the IP
-  - Disabled the account
   - Escalate to Tier 2
 
 **10. Lessons Learned**
