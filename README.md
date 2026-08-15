@@ -53,9 +53,9 @@ Every write-up is in my own words, based on what I actually found - not copied f
 
 | ID | Investigation | Category | Severity | Verdict | Report |
 |---|---|---|---|---|---|
-| 001 | Malicious-File-Script-Download-Attempt | Malware | Medium | True Positive | [View](investigations/Malicious-File-Script-Download-Attempt.md) |
+| 001 | Malicious-File-Script-Download-Attempt | Malware | Medium | True Positive | [View](./investigations/001-Malicious-FileScript-Download-Attempt-Alert.md) |
 | 002 | Kibana–Elasticsearch TLS Trust Failure After IP Re-Addressing | Infrastructure / PKI | Medium | True Positive | [View](./investigations/002-kibana-elasticsearch-tls-trust-failure.md) |
-| 003 | Arbitrary File Read on Checkpoint Security Gateway | web Attack | High | True Positive | [View](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/investigations/%5B003%5D%20-%20%5BSOC287%20-%20Arbitrary%20File%20Read%20on%20Checkpoint%20Security%20Gateway%5D.md) |
+| 003 | Arbitrary File Read on Checkpoint Security Gateway | web Attack | High | True Positive | [View](investigations/003-Arbitrary-File-Read-on-Checkpoint-Security-Gateway.md) |
 
 ---
 
