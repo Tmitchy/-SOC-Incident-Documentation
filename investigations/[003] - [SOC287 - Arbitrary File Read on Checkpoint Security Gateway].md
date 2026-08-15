@@ -18,7 +18,7 @@ What triggered the alert? What did the SOC monitoring tool flag, and why did it 
 
 **2. Initial Triage**
 First actions taken. What did I check first, and why that, before anything else?
-- Initially, I checked which `IP address/host` made the `POST` request. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, which included details such as its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
+- Initially, I checked which `IP address/host` made the `POST` request. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, including its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
 
 **3. Investigation Timeline**
 
@@ -39,7 +39,7 @@ Step-by-step walkthrough of the analysis:
    - Log Management Tool: To confirm the connection pattern and frequency.
    - Endpoint Security (EDR): To check what process on the host initiated the connection.
    - DNS logs: To see if the destination IP was reached via a domain lookup or a hardcoded IP.
-   - VirusTotal: Checked the reputation of the destination IP and any associated domain.
+   - VirusTotal: Checked the reputation of the source IP and any associated domain.
 - Indicators found:
    - The source IP `203.160.68.12`, port `24124`, sent a POST request to the firewall(Check Point Security Gateway) requesting the `/clients/MyCRL` remote path to access the directory where the users are stored by modifing and sending another POST request that contain the directory traversal payload `aCSHELL/../../../../../../../../../../etc/passwd`.
    - EDR failed to indicate that the connection originated from the firewall shell; instead, it provided details about the network connection, showing the destination IP address and the active processes, including their IDs.
@@ -47,7 +47,10 @@ Step-by-step walkthrough of the analysis:
    - VirusTotal flagged the IP as malicious (7/94 vendors), associated with China Unicom Global.
 
 - Any pivoting done:
-  - Searched log management for 203.160.68.12 across all other internal hosts; no additional targets found, indicating this was a single-target attempt.
+  - I searched log management for 203.160.68.12 across all other internal hosts; no additional targets found, indicating this was a single-target attempt.
+  - I checked whether the **/clients/MyCRL** path or **/etc/passwd** traversal attempt showed up against any other Check Point gateway or endpoint in the environment, but found nothing.
+  - I found out the source IP address belongs to China Unicom (Hong Kong) Operations Limited and originates from Hong Kong.
+  - I found the Source IP is registered to a Network Named UNICOM-HK
     
 **5. IOCs (Indicators of Compromise)**
 
