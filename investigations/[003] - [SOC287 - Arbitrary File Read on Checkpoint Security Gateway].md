@@ -69,20 +69,20 @@ Step-by-step walkthrough of the analysis:
 **7. Evidence**
 Screenshots, log snippets, or IOC tables that support the findings.
 
-  - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/SIEM%20Review.png)
+  - ![](https://raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/SIEM%20Review.png)
 
-  - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Log%20Management%20Review%20.png)
+  - ![](https:///raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/Log%20Management%20Review%20.png)
 
-  - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/EDR%20Review.png)
+  - ![](https://raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/EDR%20Review.png)
 
-  - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Virustotal-1%20Review.png)
+  - ![](https:///raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/Virustotal-1%20Review.png)
 
 
 **8. Verdict**
 True Positive: 
   - A recent web attack was successful, revealing critical vulnerabilities in the security infrastructure. Upon analyzing the tools used for log review and information gathering, it was determined that the firewall permitted a POST request. This oversight enabled the attacker to access private information and facilitated lateral movement within the network.
 
-  - ![](https://github.com/Tmitchy/-SOC-Incident-Documentation/blob/main/images/Verdict%20Review.png)
+  - ![](https:///raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/Verdict%20Review.png)
 
 **9. Response / Containment**
 What action was taken (or would be taken in a live environment):
