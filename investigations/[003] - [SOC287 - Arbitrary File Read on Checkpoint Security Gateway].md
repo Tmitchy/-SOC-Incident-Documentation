@@ -58,11 +58,12 @@ Step-by-step walkthrough of the analysis:
 | URL | /clients/MyCRL | The web remote path the adversary used to request a directory. |
 
 
+**6. MITRE ATT&CK Mapping**
 
 | Tactic | Technique | ID |
 |---|---|---|
 | Initial Access | Exploit Public-Facing Application | T1190 |
-| Credential Access | OS Credential Dumping | T1003 |
+| Credential Access | Unsecured Credentials | T1552 |
 | Discovery | File and Directory Discovery | T1083 |
 
 
@@ -90,5 +91,6 @@ What action was taken (or would be taken in a live environment):
 
 **10. Lessons Learned**
 What this incident taught me: 
-  - A concept I had to look up
-  - Getting familiar with and understanding the Tatics, and techniques used by the adversary.
+  - What aCSHELL is
+  - Through further research, I gained a better understanding of how this vulnerability was exploited, particularly by recognizing how web attacks work by modifying parameters, such as the directory traversal payload.
+  - How CVE-2024-24919 specifically bypasses authentication.
