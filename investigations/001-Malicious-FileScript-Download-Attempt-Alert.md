@@ -14,12 +14,13 @@ What triggered the alert? What did the SOC monitoring tool flag, and why did it 
 - The SIEM monitoring tool flagged: A malicious RTF(Rich Text Format) attachment identified with known `CVE-2025-21298` exploit pattern.
 - The SIEM warrants a look at: Source IP Address: `84.38.130.118`, Email Source Address: `projectmanagement@pm.me`, Device Action: `Allowed`.
 
-
+<br>
 
 **2. Initial Triage**
 First actions taken. What did I check first, and why that, before anything else?
 - Initially, I checked which destination `IP address/host` the source email address connected to. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, including its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
 
+<br>
 
 **3. Investigation Timeline**
 
@@ -31,9 +32,9 @@ First actions taken. What did I check first, and why that, before anything else?
 | 12:32 | Reviewed endpoint process activity | Identified the Process ID along with its image path, parent path, desktop user, and target command line. |
 | 03:53 | Reviewed endpoint network connections | Found and confirmed the Source IP address that made the connection. |
 | 03:55 | Reviewed endpoint terminal history | Identified the command line as well. |
-| 03:55 | Reviewed endpoint Broswer history | Found no matching data. |<br><br>
+| 03:55 | Reviewed endpoint Broswer history | Found no matching data. |
 
-
+<br>
 
 **4. Investigation**
 Step-by-step walkthrough of the analysis:
@@ -53,6 +54,8 @@ Step-by-step walkthrough of the analysis:
   - I checked whether the **/clients/MyCRL** path or **/etc/passwd** traversal attempt showed up against any other Check Point gateway or endpoint in the environment, but found nothing.
   - I found out the source IP address belongs to China Unicom (Hong Kong) Operations Limited and originates from Hong Kong.
   - I found the Source IP is registered to a Network Named **UNICOM-HK**
+
+<br>
     
 **5. IOCs (Indicators of Compromise)**
 
@@ -62,6 +65,7 @@ Step-by-step walkthrough of the analysis:
 | Port | 24124 | The port used by the source IP to initiate the connection. |
 | URL | /clients/MyCRL | The web remote path the adversary used to request a directory. |
 
+<br>
 
 **6. MITRE ATT&CK Mapping**
 
@@ -71,6 +75,7 @@ Step-by-step walkthrough of the analysis:
 | Credential Access | Unsecured Credentials | T1552 |
 | Discovery | File and Directory Discovery | T1083 |
 
+<br>
 
 **7. Evidence**
 Screenshots, log snippets, or IOC tables that support the findings.
@@ -83,6 +88,7 @@ Screenshots, log snippets, or IOC tables that support the findings.
 
   - ![](https://raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/Virustotal-1%20Review.png)
 
+<br>
 
 **8. Verdict**
 True Positive: 
@@ -90,12 +96,15 @@ True Positive:
 
   - ![](https://raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/Verdict%20Review.png)
 
+<br>
+
 **9. Response / Containment**
 
 What action was taken (or would be taken in a live environment):
 - Confirmed host isolation (`CP-Spark-Gateway-01`) as the correct containment step, given the confirmed unauthorized file access and Check Point CVE match.
 - Escalated to Tier 2 for further investigation into the extent of the file read and any downstream impact.
 
+<br>
 
 **10. Lessons Learned**
 What this incident taught me: 
