@@ -31,9 +31,7 @@ First actions taken. What did I check first, and why that, before anything else?
 | 12:32 | Reviewed endpoint process activity | Identified the Process ID along with its image path, parent path, desktop user, and target command line. |
 | 03:53 | Reviewed endpoint network connections | Found and confirmed the Source IP address that made the connection. |
 | 03:55 | Reviewed endpoint terminal history | Identified the command line as well. |
-| 03:55 | Reviewed endpoint Broswer history | Found no matching data. |
-
-
+| 03:55 | Reviewed endpoint Broswer history | Found no matching data. |<br><br>
 
 
 
