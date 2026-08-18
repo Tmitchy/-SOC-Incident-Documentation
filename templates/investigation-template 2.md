@@ -12,7 +12,7 @@
 What triggered the alert? What did the SOC monitoring tool flag, and why did it warrant a look?
 - The alert was triggered by a specific rule name: SOC287 - Arbitrary File Read on Check Point Security Gateway
 - The SIEM monitoring tool flagged: A `POST` request to an IP address that was attempting to access `aCSHELL/../../../../../../../../../../etc/passwd`
-- The SIEM warrants a look at: Destination IP Address: `172.16.20.146`, Hostname: `CP-Spark-Gateway-01`, Port: `53423`
+- The SIEM warrants a look at: Destination IP Address: `172.16.20.146`, Hostname: `CP-Spark-Gateway-01`, Port: `53423`, Device Action: `Allowed`
 
 
 
