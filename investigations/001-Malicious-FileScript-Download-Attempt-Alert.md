@@ -25,12 +25,14 @@ First actions taken. What did I check first, and why that, before anything else?
 
 | Time | Action | Result |
 |---|---|---|
-| 12:15 | Reviewed Email Security on the source endpoint | Found a matching email from the source IP, with the time it was sent and an attachment:`mail.rtf`. |
+| 12:15 | Reviewed Email Security on the source endpoint | Found a matching email from the source IP, with the time it was sent and an attachment: `mail.rtf`. |
 | 12:22 | Reviewed log management logs | Found that the destination IP address `172.16.17.137` made a **GET** request to the source IP address `84.38.130.118` via *http*. |
-| 12:30 | Reviewed log management logs | Found raw data: Process: cmd.exe, Process ID: 6784, Request URL: *http://84.38.130.118.com/shell.sct*. |
-| 03:50 | Reviewed endpoint process activity | No suspicious Activity found. |
-| 03:53 | Reviewed endpoint network connections | Found and confirmed the Source IP address that made the request. |
-| 03:55 | Reviewed endpoint terminal history | No suspicious Activity found. |
+| 12:30 | Reviewed log management logs | Found raw data: Process: `cmd.exe`, Process ID: `6784`, Request URL: *http://84.38.130.118.com/shell.sct*. |
+| 12:32 | Reviewed endpoint process activity | Identified the Process ID along with its image path, parent path, desktop user, and target command line. |
+| 03:53 | Reviewed endpoint network connections | Found and confirmed the Source IP address that made the connection. |
+| 03:55 | Reviewed endpoint terminal history | Identified the command line as well. |
+| 03:55 | Reviewed endpoint Broswer history | Found no matching data. |
+
 
 
 
