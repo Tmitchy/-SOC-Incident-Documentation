@@ -10,23 +10,24 @@
 
 **1. Alert Summary**
 What triggered the alert? What did the SOC monitoring tool flag, and why did it warrant a look?
-- The alert was triggered by a specific rule name: SOC336 - Windows OLE Zero-Click RCE Exploitation Detected
-- The SIEM monitoring tool flagged: Malicious RTF(Rich Text Format) attachment identified with known `CVE-2025-21298` exploit pattern
-- The SIEM warrants a look at: Source IP Address: `84.38.130.118`, Email Source Address: `projectmanagement@pm.me`, Device Action: `Allowed`
+- The alert was triggered by a specific rule name: SOC336 - Windows OLE Zero-Click RCE Exploitation Detected.
+- The SIEM monitoring tool flagged: A malicious RTF(Rich Text Format) attachment identified with known `CVE-2025-21298` exploit pattern.
+- The SIEM warrants a look at: Source IP Address: `84.38.130.118`, Email Source Address: `projectmanagement@pm.me`, Device Action: `Allowed`.
 
 
 
 **2. Initial Triage**
 First actions taken. What did I check first, and why that, before anything else?
-- Initially, I checked which `IP address/host` made the `POST` request. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, including its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
+- Initially, I checked which destination `IP address/host` the source email address connected to. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, including its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
 
 
 **3. Investigation Timeline**
 
 | Time | Action | Result |
 |---|---|---|
-| 03:43 | Reviewed browser history on the destination endpoint | No matching request found on the browser history |
-| 03:46 | Reviewed log management logs | Found additional suspicious POST requests from `203.160.68.12` to `172.16.20.146`, routed via proxy |
+| 12:15 | Reviewed Email Security on the source endpoint | Found a matching email from the source IP, with the time it was sent and an attachment:`mail.rtf`. |
+| 12:22 | Reviewed log management logs | Found that the destination IP address `172.16.17.137` made a **GET** request to the source IP address `84.38.130.118` via *http*. |
+| 12:30 | Reviewed log management logs | Found raw data: Process: cmd.exe, Process ID: 6784, Request URL: *http://84.38.130.118.com/shell.sct*. |
 | 03:50 | Reviewed endpoint process activity | No suspicious Activity found. |
 | 03:53 | Reviewed endpoint network connections | Found and confirmed the Source IP address that made the request. |
 | 03:55 | Reviewed endpoint terminal history | No suspicious Activity found. |
