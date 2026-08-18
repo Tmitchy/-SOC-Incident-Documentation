@@ -41,10 +41,11 @@ Step-by-step walkthrough of the analysis:
 - Logs/tools reviewed:
    - Log Management Tool: To confirm the connection pattern and frequency.
    - Endpoint Security (EDR): To check what process on the host initiated the connection.
+   - Endpoint Security (EDR): To collect data from the network action, terminal history, and browser history plugins on the host that initiated the connection..
    - DNS logs: To see if the destination IP was reached via a domain lookup or a hardcoded IP.
    - VirusTotal: Checked the reputation of the source IP and any associated domain.
 - Indicators found:
-   - The source IP `203.160.68.12`, port `24124`, sent a POST request to the firewall(Check Point Security Gateway) requesting the `/clients/MyCRL` remote path to access the directory where the users are stored by modifying and sending another POST request that contain the directory traversal payload `aCSHELL/../../../../../../../../../../etc/passwd`.
+   - The source IP `84.38.130.118`, port `24124`, sent a POST request to the firewall(Check Point Security Gateway) requesting the `/clients/MyCRL` remote path to access the directory where the users are stored by modifying and sending another POST request that contain the directory traversal payload `aCSHELL/../../../../../../../../../../etc/passwd`.
    - EDR failed to indicate that the connection originated from the firewall shell; instead, it provided details about the network connection, showing the destination IP address and the active processes, including their IDs.
    - No matching DNS query preceded the connections — the IP was hardcoded, not resolved via a domain.
    - VirusTotal flagged the IP as malicious (7/94 vendors), associated with China Unicom Global.
