@@ -104,7 +104,7 @@ Screenshots, log snippets, or IOC tables that support the findings.
 True Positive: 
   - A recent web attack was successful, revealing critical vulnerabilities in the security infrastructure. Upon analyzing the tools used for log review and information gathering, it was determined that the firewall permitted a POST request. This oversight enabled the attacker to access private information within the network device.
 
-  - ![](https://raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/Verdict%20Review.png)
+  - ![](https://raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/Verdict%20Review2.png)
 
 <br>
 
