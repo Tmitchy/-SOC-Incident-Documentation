@@ -93,7 +93,7 @@ Screenshots, log snippets, or IOC tables that support the findings.
 
   - ![](https://raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/EDR%20Review%202.png)
 
-  - ![](https://raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/Virustotal-1%20Review.png)
+  - ![](https://raw.githubusercontent.com/Tmitchy/-SOC-Incident-Documentation/main/images/Virustotal-2%20Review.png)
 
 <br>
 
