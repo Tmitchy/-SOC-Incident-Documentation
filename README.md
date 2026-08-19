@@ -53,7 +53,7 @@ Every write-up is in my own words, based on what I actually found - not copied f
 
 | ID | Investigation | Category | Severity | Verdict | Report |
 |---|---|---|---|---|---|
-| 001 | SOC336 - Windows OLE Zero-Click RCE Exploitation Detected | Malware | Medium | True Positive | [View](./investigations/001-SOC336-Windows-OLE-Zero-Click-RCE-Exploitation-Detected.md) |
+| 001 | SOC336 - Windows OLE Zero-Click RCE Exploitation Detected | Malware | Critical | True Positive | [View](./investigations/001-SOC336-Windows-OLE-Zero-Click-RCE-Exploitation-Detected.md) |
 | 002 | Kibana–Elasticsearch TLS Trust Failure After IP Re-Addressing | Infrastructure / PKI | Medium | True Positive | [View](./investigations/002-kibana-elasticsearch-tls-trust-failure.md) |
 | 003 | Arbitrary File Read on Checkpoint Security Gateway | web Attack | High | True Positive | [View](investigations/003-Arbitrary-File-Read-on-Checkpoint-Security-Gateway.md) |
 
