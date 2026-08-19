@@ -38,8 +38,8 @@ Every write-up is in my own words, based on what I actually found - not copied f
 | Metric | Count |
 |---|---|
 | Total investigations | 3 |
-| Phishing alerts | 0 |
-| Malware alerts | 1 |
+| Phishing alerts | 1 |
+| Malware alerts | 2 |
 | Brute force / credential attacks | 0 |
 | Web Attack | 1 |
 | Infrastructure / PKI incidents | 1 |
@@ -53,7 +53,7 @@ Every write-up is in my own words, based on what I actually found - not copied f
 
 | ID | Investigation | Category | Severity | Verdict | Report |
 |---|---|---|---|---|---|
-| 001 | Malicious-File-Script-Download-Attempt | Malware | Medium | True Positive | [View](./investigations/001-Malicious-FileScript-Download-Attempt-Alert.md) |
+| 001 | SOC336 - Windows OLE Zero-Click RCE Exploitation Detected | Malware | Medium | True Positive | [View](./investigations/001-SOC336-Windows-OLE-Zero-Click-RCE-Exploitation-Detected.md) |
 | 002 | Kibana–Elasticsearch TLS Trust Failure After IP Re-Addressing | Infrastructure / PKI | Medium | True Positive | [View](./investigations/002-kibana-elasticsearch-tls-trust-failure.md) |
 | 003 | Arbitrary File Read on Checkpoint Security Gateway | web Attack | High | True Positive | [View](investigations/003-Arbitrary-File-Read-on-Checkpoint-Security-Gateway.md) |
 
@@ -63,7 +63,7 @@ Every write-up is in my own words, based on what I actually found - not copied f
 
 As investigations accumulate, this tracks the range of SOC competencies shown-useful for a recruiter scanning for specific skills.
 
-- [ ] Phishing email analysis (headers, links, attachments)
+- [x] Phishing email analysis (headers, links, attachments)
 - [ ] Log correlation across multiple sources
 - [x] IOC identification & lookup (VirusTotal, AbuseIPDB, etc.)
 - [x] Malware behavior analysis
@@ -80,7 +80,7 @@ As investigations accumulate, this tracks the range of SOC competencies shown-us
 
 ## 🔭 Roadmap
 
-- [ ] Add first LetsDefend phishing investigation
+- [x] Add first LetsDefend phishing investigation
 - [x] Add first malware analysis investigation with full MITRE ATT&CK mapping
 - [ ] Build a simple script to auto-generate the stats table from investigation files
 - [ ] Add a "false positive" example investigation-showing sound judgment matters as much as catching true threats
