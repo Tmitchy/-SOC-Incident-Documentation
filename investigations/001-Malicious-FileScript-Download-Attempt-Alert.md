@@ -78,9 +78,9 @@ Step-by-step walkthrough of the analysis:
 
 | Tactic | Technique | ID |
 |---|---|---|
-| Initial Access | Exploit Public-Facing Application | T1190 |
-| Credential Access | Unsecured Credentials | T1552 |
-| Discovery | File and Directory Discovery | T1083 |
+| Initial Access | Phishing | T1566 |
+| Execution | Command and Scripting Interpreter: PowerShell | T1059.001 |
+|  Stealth, Execution | Hijack Execution Flow | T1574.002 |
 
 <br>
 
